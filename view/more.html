@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/account.css">
+    <link rel="stylesheet" href="../css/more.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../layui-v2.4.3/layui/css/layui.css">
+    <script src="../layui-v2.4.3/layui/layui.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource1.5.1.js"></script>
+    <title>更多</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 头部 -->
+        <header>
+            <span>更多</span>
+        </header>
+        <article>
+            <div class="art_info art3" v-for="info in msg">
+                <p><img v-bind:src="info.url">{{info.text}}<i class="fa fa-angle-right"></i></p>
+            </div>
+            <div class="one">
+                <div class="art_info art4" v-for="info in show">
+                    <p><img v-bind:src="info.url">{{info.text}}<i class="fa fa-angle-right"></i></p>
+                </div>
+            </div>
+            <div class="art_out">
+                <span>安全退出</span>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <ul>
+            <a href="./index.html"><li><p><img src="../img/m_index/home.gif" alt=""></p><span>首页</span></li></a>
+            <a href="./project_list_1.html"><li><p><img src="../img/index/project.jpg" alt=""></p><span>项目</span></li></a>
+            <a href="./account.html"><li><p><img src="../img/index/mine.jpg" alt=""></p><span>我的</span></li></a>
+            <a href="./more.html"><li><p><img src="../img/m_index/more_22.png" alt=""></p><span class="on">更多</span></li></a>
+        </ul>
+    </footer>
+</body>
+<script type="text/javascript" async="async">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:null,
+            show:null
+        },
+        created:function () {
+            this.get()
+        },
+        methods:{
+            get:function () {
+                var url='../js/more.json'
+                this.$http.get(url).then(function (responce){ 
+                    this.msg=responce.body.msg
+                    this.show=responce.body.show
+                },function () {
+                    alert('请求失败')
+                });
+            },
+        }
+    });
+</script>
+</html>

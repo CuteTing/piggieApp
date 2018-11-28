@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/account.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource1.5.1.js"></script>
+    <title>我的账户</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <span>我的账户</span>
+        </header>
+        <!-- 背景图片 -->
+        <section> 
+            <div class="banner">
+                <div class="b_info">
+                    <p><span>132****5014</span></p>
+                    <p><span class="data1">0</span><span>总资产（元）</span> <i></i> </p>
+                    <div class="two_info">
+                        <div><span class="data2">0</span><span>账户余额（元）</span></div>
+                    </div>
+                    <div class="two_info">
+                        <div><span class="data3">0</span><span>在投金额（元）</span></div>
+                    </div>
+                    <div class="two_info">
+                        <div><span class="data4">0</span><span>待收收益（元）</span></div>
+                    </div>
+                    <div class="two_info">
+                        <div><span class="data5">0</span><span>累计收益（元）</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 充值提现 -->
+            <div class="b_info_title">
+                <div class="b_info_title_left" v-for="item in msg">
+                    <a v-bind:href="item.src"><img v-bind:src="item.url"><span>{{item.text}}</span></a>
+                </div>
+            </div>
+        </section>
+        <article>
+            <div class="one">
+                <div class="art_info art1" v-for="items in message">
+                    <p><img v-bind:src="items.url">{{items.text}}<i class="fa fa-angle-right"></i></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="art_info art2" v-for="items in content">
+                    <p><img v-bind:src="items.url">{{items.text}}<i class="fa fa-angle-right"></i></p>
+                </div>
+            </div>
+        </article>
+    </div>
+    <!-- 底部 -->
+    <footer>
+        <ul>
+            <a href="./index.html"><li><p><img src="../img/m_index/home.gif" alt=""></p><span>首页</span></li></a>
+            <a href="./project_list_1.html"><li><p><img src="../img/index/project.jpg" alt=""></p><span>项目</span></li></a>
+            <a href="./account.html"><li><p><img src="../img/m_index/mine.gif" alt=""></p><span class="on">我的</span></li></a>
+            <a href="./more.html"><li><p><img src="../img/index/more.jpg" alt=""></p><span>更多</span></li></a>
+        </ul>
+    </footer>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:null,
+            message:null,
+            content:null
+        },
+        created:function () {
+            this.get()
+        },
+        methods:{
+            get:function () {
+                var url='../js/account.json'
+                this.$http.get(url).then(function (responce) {
+                    this.msg=responce.body.msg
+                    this.message=responce.body.message
+                    this.content=responce.body.content
+                },function () {
+                    alert('请求失败')
+                });
+            },
+        }
+    });
+    // 定时器
+    var  oSpan1 = document.querySelector('.data1'),
+         oSpan2 = document.querySelector('.data2'),
+         oSpan3 = document.querySelector('.data3'),
+         oSpan4 = document.querySelector('.data4'),
+         oSpan5 = document.querySelector('.data5');
+    var timer=null;
+    function timers(el,tar,time) {
+       timer = setInterval(function(){
+           var speeds =  (tar-parseInt(el.innerHTML)) / 10;
+
+           speeds=speeds>0 ? Math.ceil(speeds) : Math.floor(speeds);
+           if(parseInt(el) >= tar){
+               clearInterval(timer);
+           }else {
+               el.innerHTML=parseInt(parseInt(el.innerHTML)+speeds);
+               console.log(el);
+           }
+       },time);
+     }
+    timers(oSpan1,203040,12);
+    timers(oSpan2,1000,8);
+    timers(oSpan3,200000,11);
+    timers(oSpan4,10050,12);
+    timers(oSpan5,15000,11);
+    
+</script>
+</html>

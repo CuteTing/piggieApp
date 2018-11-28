@@ -1,0 +1,42 @@
+@charset "UTF-8";
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: #fff;
+}
+.art-nav{
+    margin-bottom: .5rem;
+    padding: .5rem 0;
+    text-align: center;
+}
+.art-nav img{
+    width: 25%;
+    vertical-align: middle;
+}
+ .art-title{
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem 0;
+}
+ .art-title{
+    margin: .8rem 0;
+}
+ .art_main_info{
+    padding: .8rem;
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+}
+ .art_main_info p{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .art_main_info p:nth-of-type(2){
+    color: #b0b0b0;
+}

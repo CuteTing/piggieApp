@@ -1,0 +1,31 @@
+{
+    "status":0,
+      "message":[
+        {
+          "url":"../img/index/icon_02.jpg",
+          "text":"定期理财"
+        },{
+            "url":"../img/index/icon_01.jpg",
+            "text":"预约理财"
+        },{
+            "url":"../img/index/icon_04.jpg",
+            "text":"债券市场"
+          },{
+            "url":"../img/index/icon_03.jpg",
+            "text":"积分商城"
+          },{
+            "url":"../img/index/icon_05.jpg",
+            "text":"献爱心"
+          },{
+            "url":"../img/index/icon_06.jpg",
+            "text":"安全中心"
+          },{
+            "url":"../img/index/icon_08.jpg",
+            "text":"活动专区"
+          },{
+            "url":"../img/index/icon_09.jpg",
+            "text":"签到"
+          }
+      ]
+
+  }

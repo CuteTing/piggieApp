@@ -1,0 +1,131 @@
+@charset "UTF-8";
+section{
+    color: white;
+    font-size: .8rem;
+}
+section div.banner{
+    width: 100%;
+    height: 15rem;
+    background: #f22eb4 url(../img/m_index/aount_bg.png) repeat-x;
+}
+section .b_info span{
+    display: inline-block;
+} 
+section .b_info p:nth-of-type(1) span{
+    padding: .5rem 1rem;
+}
+section .b_info p:nth-of-type(2) span{
+    width: 100%;
+    text-align: center;
+}
+section .b_info p:nth-of-type(2){
+    position: relative;
+}
+section .b_info p:nth-of-type(2) i{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(../img/m_index/show.gif) no-repeat;
+    background-size: 80%;
+    position: absolute;
+    top:0;
+    right: 4rem;
+}
+section .b_info p:nth-of-type(2) span:first-child{
+    font-size: 2rem;
+}
+section .b_info div.two_info{
+    display: flex;
+    justify-content:space-around;
+    width: 50%;
+    float: left;
+}
+section .b_info div.two_info div{
+    text-align: center;
+    margin-top: .6rem;
+} 
+section .b_info div.two_info div span{
+    width: 100%;
+}  
+.b_info_title{
+    height: 2.5rem;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+.b_info_title div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.b_info_title img{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+.b_info_title  span{
+    color: black;
+    margin-left: .5rem;
+}
+article .one{
+    margin-top: .5rem;
+}
+article .art_info img{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem; 
+    margin: 0 .5rem 0 1rem;
+}
+article {
+    padding-bottom: 6rem;
+}
+article .art_info p{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+article .art_info i{
+    font-size: 1.5rem;
+    position: absolute;
+    right: .8rem;
+    color: #b5b5b5;
+}
+/* 设置 */
+.b_info_self{  
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.b_info_self p{
+    width: 100%;
+    text-align: center;
+}
+.b_info_self p:first-child{
+    margin-top: 3rem;
+}
+.b_info_self p:first-child span{
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: url(../img/m_index/self.jpg) no-repeat;
+    background-size: 100%;
+}
+div.art_02 p:nth-of-type(2) label{
+    position: absolute;
+    right: 2.2rem;
+}
+div.art_03 i.check{
+    display: inline-block;
+    width: 3rem;
+    height: 2rem;
+    background: url(../img/m_index/setting_08.gif) no-repeat;
+    background-size: 100%;
+}

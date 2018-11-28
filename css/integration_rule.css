@@ -1,0 +1,32 @@
+@charset "UTF-8";
+article .art_rule{
+    padding: .8rem;
+}
+article div.art_rule_title{
+    padding: .8rem;
+    background: #f04d60;
+    color: #fff;
+    text-align: center;
+}
+div.art_rule_info,div.art_rule_info{
+    margin-bottom: 1rem;
+    background: #fff;
+}
+div.art_rule_info,div.art_rule_info p{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+div.art_rule_info p:first-child{
+    color: #c0c0c0;
+}
+div.art_rule_info p{
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+    padding: .5rem 0;
+    text-align: center;
+}
+div.art_rule_info p span{
+    width: 35%;
+}

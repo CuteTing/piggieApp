@@ -1,0 +1,19 @@
+{
+    "status":0,
+    "message":[
+      {
+        "url":"../img/more/activity_01.gif",
+        "text":"过年不打烊 豪礼DuangDuang送",
+        "date":"2017/01/01-2017/01/15"
+      },
+      {
+        "url":"../img/more/activity_02.gif",
+        "text":"年中不打烊 圣诞狂欢季",
+        "date":"2016/12/24-2016/12/28"
+      }, {
+        "url":"../img/more/activity_03.gif",
+        "text":"吃货大比拼 疯狂赢豪礼",
+        "date":"2017/01/01-2017/01/15"
+      }
+    ]
+  }

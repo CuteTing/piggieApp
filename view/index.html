@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../layui-v2.4.3/layui/css/layui.css">
+    <script src="../layui-v2.4.3/layui/layui.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource1.5.1.js"></script>
+    
+    <title>小猪理财</title>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <span>小猪理财</span>
+    </header>
+    <!-- 背景图片 -->
+    <section>
+        <div class="banner">
+            <div class="layui-carousel" id="test1" autoplay="autoplay">
+                <div carousel-item>
+                  <div><img src="../img/index/banner.jpg" alt=""></div>
+                  <div><img src="../img/index/banner.jpg" alt=""></div>
+                  <div><img src="../img/index/banner.jpg" alt=""></div>
+                  <div><img src="../img/index/banner.jpg" alt=""></div>
+                  <div><img src="../img/index/banner.jpg" alt=""></div>
+                </div>
+              </div>
+        </div>
+    </section>
+    <div id="app">
+        <article>
+            <ul>
+                <li v-for="info in message"><img v-bind:src="info.url"><span>{{info.text}}</span></li>
+            </ul>
+            <div class="borrowing">
+                <div class="b_left">
+                    <p class="title"><span>新</span>文化科技企业补充流动资金借款</p>
+                    <p class="data"><span>6%+6%</span><span>1个月</span><span>可投9 0万</span></p>
+                    <p class="b_img"><span class="one"></span></p>
+                    <p class="b_info"><span>承保</span><span>保障金</span><span>担保</span></p>
+                </div>
+                <div class="b_right">
+                    <span>我要投资</span>
+                </div>
+            </div>
+            <div class="borrowing">
+                <div class="b_left">
+                    <p class="title"><span>稳</span>投资管理企业补充流动资金借款</p>
+                    <p class="data"><span>9%+2%</span><span>4个月</span><span>可投5 0万</span></p>
+                    <p class="b_img"><span class="two"></span></p>
+                    <p class="b_info"><span>承保</span><span>保障金</span><span>担保</span><span>抵押</span></p>
+                </div>
+                <div class="b_right">
+                    <span>我要投资</span>
+                </div>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <ul>
+            <a href="./index.html"><li><p><img src="../img/index/home.jpg" alt=""></p><span class="on">首页</span></li></a>
+            <a href="./project_list_1.html"><li><p><img src="../img/index/project.jpg" alt=""></p><span>项目</span></li></a>
+            <a href="./account.html"><li><p><img src="../img/index/mine.jpg" alt=""></p><span>我的</span></li></a>
+            <a href="./more.html"><li><p><img src="../img/index/more.jpg" alt=""></p><span>更多</span></li></a>
+        </ul>
+    </footer>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:null
+        },
+        created:function () {
+            this.get()
+        },
+        methods:{
+            get:function () {
+                var url='../js/index.json'
+                this.$http.get(url).then(function (responce){ 
+                    this.message=responce.body.message
+                },function () {
+                    alert('请求失败')
+                });
+            },
+        }
+    });
+
+    layui.use('carousel', function(){
+    var carousel = layui.carousel;
+    //建造实例
+    carousel.render({
+        elem: '#test1'
+        ,width: '100%' //设置容器宽度
+        ,arrow: 'always' 
+        ,height:'100%'//始终显示箭头
+        //,anim: 'updown' //切换动画方式
+    });
+    });
+</script>
+</html>

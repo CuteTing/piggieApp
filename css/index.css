@@ -1,0 +1,130 @@
+@charset "UTF-8";
+section div.banner{
+    width: 100%;
+    height: 12rem;
+    position: relative;
+    border-bottom: 1px solid #e2e2e2;
+    overflow: hidden;
+}
+section div.layui-carousel img{
+    width: 180%;
+    height: 12rem;
+    position: absolute;
+    left: -5rem;
+}
+
+article{
+    padding-bottom: 6rem;
+}
+article ul,
+footer ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #fff;
+}
+article ul li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 24.7%;
+    height: 5rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid #e2e2e2;
+}
+article ul li img{
+    width: 40px;
+    height: 40px;
+}
+article ul li span,
+footer ul li span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+article ul li{
+    border-right: 1px solid #e2e2e2;
+}
+article ul li:nth-of-type(4),
+article ul li:nth-of-type(8){
+    border-right: none;
+}
+ div.borrowing{
+    width: 100%;
+    margin-top: .5rem;
+    padding: 1rem 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ div.borrowing .b_left{
+    width: 70%;
+    line-height: 1.5rem;
+}
+div.borrowing .b_left p:not(.b_img){
+    padding-left: 1.8rem;
+}
+div.borrowing .b_left p.title{
+    color: #424242;
+}
+div.borrowing .b_left p.title span{
+    display: inline-block;
+    background: #f24a61;
+    padding: .05rem .25rem;
+    color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    left: .5rem;
+}
+div.borrowing .b_left p.data span{
+    margin-right: 10%;
+}
+div.borrowing .b_left p.data span:first-child{
+    color: #f24a61;
+}
+div.borrowing .b_left p.data span:last-child{
+    color: #8e8e8e;
+}
+div.borrowing .b_left p.b_img{
+    width: 100%;
+    height: .5rem;
+    background: #e2e2e2;
+    border-radius: 5px;
+    margin: 1rem 0;
+    text-align: left;
+}
+div.borrowing .b_left p.b_img span{
+    display: block;
+    height: 100%;
+    background: #f24a61;
+    border-radius: 5px;
+    animation: change  3s linear 1;
+}
+div.borrowing .b_left p.b_img span.one{
+    width: 40%;
+}
+div.borrowing .b_left p.b_img span.two{
+    width: 60%;
+}
+div.borrowing .b_left p.b_info span{
+    padding: 5px 10px;
+    border: 1px solid #d2d2d2;
+    margin-right: .5rem;
+    border-radius: 2px;
+}
+div.borrowing .b_right span{
+    background: #f24a61;
+    color: #fff;
+    padding: .3rem .8rem;
+    border-radius: 3px;
+}
+
+@keyframes change{
+    0%{
+        width: 0;
+    }    
+}
+

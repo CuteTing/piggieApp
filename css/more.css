@@ -1,0 +1,12 @@
+@charset "UTF-8";
+article div.art_out{
+    margin-top: 4rem;
+    text-align: center;
+}
+article div.art_out span{
+    display: inline-block;
+    background: #f22e5c;
+    padding: .8rem 8rem;
+    border-radius: 5px;
+    color: #fff;
+}

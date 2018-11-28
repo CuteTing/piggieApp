@@ -1,0 +1,36 @@
+@charset "UTF-8";
+div.address,
+.oprea{
+    padding: 1rem;
+    background: #fff;
+}
+div.address p:first-child .tel{
+    float: right;
+}
+div.oprea{
+    padding: .5rem;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: space-between;
+}
+div.oprea i{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    margin-right: .2rem;
+}
+div.oprea i.write{
+    background: url(../img/m_index/address_01.gif) no-repeat;
+    background-size: 100%;
+}
+div.oprea i.delete{
+    background: url(../img/m_index/address_02.gif) no-repeat;
+    background-size: 100%;
+    margin-left: .8rem;
+}
+div.oprea i.check{
+    background: url(../img/m_index/address_03.jpg) no-repeat;
+    background-size: 100%;
+}

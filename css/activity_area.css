@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.art_info{
+    margin-bottom: .5rem;
+    border-bottom: 1px solid #e2e2e2;
+}
+.art_info_img img{
+    width: 100%;
+}
+.art_info_message{
+    background: #fff;
+    padding: .4rem 1rem;
+    line-height: 2rem;
+}
+.art_info_message p:nth-of-type(2) span.art_info_out{
+    position: absolute;
+    right: 4%;;
+}
+.art_info_message p:nth-of-type(2) i{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(../img/more/activity_colock.gif) no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.art_info_message p:nth-of-type(2) span.art_info_in{
+    color: #c8c8c8;
+    letter-spacing: .06rem;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/investment.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource1.5.1.js"></script>
+    <title>投资详情</title>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <i class="fa fa-angle-left"></i>
+        <span>投资详情</span>
+    </header>
+    <div id="app">
+        <article>
+            <div class="investment_info" v-for="item in msg">
+                <p><span>{{item.id}}</span><span>{{item.idnum}}</span></p>
+            </div>
+            <p class="his_info">还款记录</p>
+            <div class="art_investment_info">
+                <ul class="title">
+                    <li v-for="item in message">{{item.text}}</li>
+                </ul>
+                <ul>
+                    <li v-for="item in nums">{{item.num}}</li>
+                </ul>
+                <ul >
+                    <li v-for="item in date">{{item.info}}</li>
+                </ul>
+                <ul>
+                    <li v-for="item in data">{{item.bignum}}</li>
+                </ul>
+                <ul class="last">
+                    <li class="on"><span><i class="fa fa-check"></i></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:null,
+            message:null,
+            nums:null,
+            date:null,
+            data:null
+        },
+        created:function () {
+            this.get()
+        },
+        methods:{
+            get:function () {
+                var url='../js/investment.json'
+                this.$http.get(url).then(function (responce) {
+                    this.msg=responce.body.msg
+                    this.message=responce.body.message
+                    this.nums=responce.body.nums
+                    this.data=responce.body.data
+                    this.date=responce.body.date
+                },function () {
+                    alert('请求失败')
+                });
+            },
+        }
+    })
+</script>
+</html>
